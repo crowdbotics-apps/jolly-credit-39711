@@ -11,7 +11,9 @@ const Signup = () => {
   const navigation = useNavigation();
   return <View style={styles.container}>
       <View style={styles.heading}>
-        <Text style={styles.headingText}>Sign up</Text>
+        <Pressable onPress={() => {
+        navigation.navigate("Untitled6");
+      }}><Text style={styles.headingText}>Sign up</Text></Pressable>
       </View>
       <View>
         <Pressable onPress={() => {
