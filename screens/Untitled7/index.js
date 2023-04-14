@@ -1,3 +1,4 @@
+import { Text } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { Pressable } from "react-native";
 import React from "react";
@@ -14,12 +15,22 @@ const Untitled7 = () => {
         position: 'relative',
         flex: 1
       }}></ScrollView></Pressable>
-    </SafeAreaView>;
+    <Pressable onPress={() => {
+      navigation.navigate("uploadDocumentsScreen", {});
+    }}><Text style={styles.FDgcZeHk}>Upload docs
+    </Text></Pressable></SafeAreaView>;
 };
 
 const styles = StyleSheet.create({
   safeArea: {
     height: '100%'
+  },
+  FDgcZeHk: {
+    width: 100,
+    height: 50,
+    lineHeight: 14,
+    fontSize: 14,
+    borderRadius: 0
   }
 });
 export default Untitled7;
