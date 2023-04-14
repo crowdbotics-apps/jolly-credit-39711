@@ -22,10 +22,12 @@ const Signup = () => {
           <Text style={styles.mr10}>Email address</Text>
           <Input placeholder='Email' />
         </View></Pressable>
-        <View style={styles.mb20}>
+        <Pressable onPress={() => {
+        navigation.navigate("Untitled7");
+      }}><View style={styles.mb20}>
           <Text style={styles.mr10}>Password</Text>
           <Input placeholder='Enter' />
-        </View>
+        </View></Pressable>
         <View style={styles.mb20}>
           <Text style={styles.mr10}>Confirm password</Text>
           <Input placeholder='Enter' />

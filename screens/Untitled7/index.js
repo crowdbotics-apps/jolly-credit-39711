@@ -3,7 +3,7 @@ import { Pressable } from "react-native";
 import React from "react";
 import { StyleSheet, ScrollView, SafeAreaView } from "react-native";
 
-const Untitled6 = () => {
+const Untitled7 = () => {
   const navigation = useNavigation();
   return <SafeAreaView style={styles.safeArea}>
         <Pressable onPress={() => {
@@ -22,4 +22,4 @@ const styles = StyleSheet.create({
     height: '100%'
   }
 });
-export default Untitled6;
+export default Untitled7;
