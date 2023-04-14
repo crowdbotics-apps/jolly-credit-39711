@@ -1,7 +1,10 @@
+import { useNavigation } from "@react-navigation/native";
+import { Pressable } from "react-native";
 import React, { useState } from "react";
 import { Text, StyleSheet, View, SafeAreaView, TextInput, Switch, ScrollView } from "react-native";
 
-const AccountSettingsScreen = params => {
+const AccountSettingsScreen = () => {
+  const navigation = useNavigation();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [cardNumber, setCardNumber] = useState("");
@@ -10,7 +13,9 @@ const AccountSettingsScreen = params => {
   const [smsNotifications, setSmsNotifications] = useState(false);
   const [deactivateAccount, setDeactivateAccount] = useState(false);
   return <SafeAreaView style={styles.container}>
-      <ScrollView>
+      <Pressable onPress={() => {
+      navigation.navigate("inviteFriends");
+    }}><ScrollView>
         <View style={styles.subContainer}>
           <Text style={styles.subText}>Subscription</Text>
           <View style={styles.subPallet}>
@@ -57,7 +62,7 @@ const AccountSettingsScreen = params => {
             <Switch style={styles.toggleSwitch} value={deactivateAccount} onValueChange={value => setDeactivateAccount(value)} />
           </View>
         </View>
-      </ScrollView>
+      </ScrollView></Pressable>
     </SafeAreaView>;
 };
 
