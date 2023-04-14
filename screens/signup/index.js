@@ -28,14 +28,18 @@ const Signup = () => {
           <Text style={styles.mr10}>Password</Text>
           <Input placeholder='Enter' />
         </View></Pressable>
-        <View style={styles.mb20}>
+        <Pressable onPress={() => {
+        navigation.navigate("Terms and Conditions", {});
+      }}><View style={styles.mb20}>
           <Text style={styles.mr10}>Confirm password</Text>
           <Input placeholder='Enter' />
-        </View>
+        </View></Pressable>
 
-        <View style={styles.loginContainer}>
+        <Pressable onPress={() => {
+        navigation.navigate("Privacy Policy", {});
+      }}><View style={styles.loginContainer}>
           <Button onPress={pressed}>Sign up</Button>
-        </View>
+        </View></Pressable>
         <View style={styles.orContainer}>
           <View style={styles.line} />
           <Text style={styles.orText}>Or</Text>
