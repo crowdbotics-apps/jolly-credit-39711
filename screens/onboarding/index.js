@@ -1,3 +1,5 @@
+import { useNavigation } from "@react-navigation/native";
+import { Pressable } from "react-native";
 import React, { useState } from "react";
 import { View, Text, TouchableOpacity, TouchableHighlight, StyleSheet } from "react-native";
 const sliderData = [{
@@ -18,6 +20,7 @@ const Onboarding = () => {
 export default Onboarding;
 
 const Slider = props => {
+  const navigation = useNavigation();
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const handleOnPress = () => {
@@ -32,7 +35,10 @@ const Slider = props => {
   };
 
   return <View style={styles.container}>
-      <View style={styles.onboardingArea}></View>
+      <View style={styles.onboardingArea}><Pressable onPress={() => {
+        navigation.navigate("signup");
+      }}><Text style={styles.yUBulYEy}>Create an account
+      </Text></Pressable></View>
       <View style={styles.topHead}>
         <Text style={styles.mainHeading}>{props.data[currentSlide].heading}</Text>
       </View>
@@ -42,9 +48,11 @@ const Slider = props => {
         {props.data.map((item, index) => <View style={currentSlide === index ? styles.selectedDot : styles.dot} key={index}></View>)}
       </View>
 
-      <View style={styles.continueButton}>
+      <Pressable onPress={() => {
+      navigation.navigate("login");
+    }}><View style={styles.continueButton}>
         <Button onPress={handleOnPress} style={styles.continueBtn}>Continue</Button>
-      </View>
+      </View></Pressable>
       {currentSlide > 0 && <TouchableOpacity onPress={props.onFinish}><Text style={styles.skipText}>Skip</Text></TouchableOpacity>}
 
     </View>;
@@ -104,6 +112,25 @@ const styles = StyleSheet.create({
     paddingTop: 20,
     fontSize: 18,
     fontWeight: "600"
+  },
+  HPgZBLKA: {
+    width: 100,
+    height: 50,
+    lineHeight: 14,
+    fontSize: 14,
+    borderRadius: 0
+  },
+  yUBulYEy: {
+    width: 138,
+    height: 48,
+    lineHeight: 14,
+    fontSize: 15,
+    borderRadius: 0,
+    color: "#000000",
+    position: "absolute",
+    left: 0,
+    top: 0,
+    textAlign: "center"
   }
 });
 
