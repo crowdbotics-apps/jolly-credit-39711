@@ -1,3 +1,5 @@
+import { useNavigation } from "@react-navigation/native";
+import { Pressable } from "react-native";
 import React from "react";
 import { Text, View, TouchableOpacity, Image, StyleSheet, TextInput, TouchableHighlight } from "react-native";
 
@@ -6,15 +8,18 @@ const pressed = () => {
 };
 
 const Signup = () => {
+  const navigation = useNavigation();
   return <View style={styles.container}>
       <View style={styles.heading}>
         <Text style={styles.headingText}>Sign up</Text>
       </View>
       <View>
-        <View style={styles.emailContainer}>
+        <Pressable onPress={() => {
+        navigation.navigate("Untitled1");
+      }}><View style={styles.emailContainer}>
           <Text style={styles.mr10}>Email address</Text>
           <Input placeholder='Email' />
-        </View>
+        </View></Pressable>
         <View style={styles.mb20}>
           <Text style={styles.mr10}>Password</Text>
           <Input placeholder='Enter' />
